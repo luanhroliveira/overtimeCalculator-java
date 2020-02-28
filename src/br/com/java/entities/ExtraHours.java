@@ -1,14 +1,7 @@
 package br.com.java.entities;
 
-import java.text.SimpleDateFormat;
-import java.time.Instant;
-import java.util.Calendar;
-import java.util.Date;
-
 public abstract class ExtraHours {
 
-	private static SimpleDateFormat sdf = new SimpleDateFormat("HH:mm");
-	
 	private String hoursPerformed;
 	private Double dsrPercentage;
 	private Double employeeSalary;
@@ -45,17 +38,13 @@ public abstract class ExtraHours {
 	public void setEmployeeSalary(Double employeeSalary) {
 		this.employeeSalary = employeeSalary;
 	}
-	
-	
-	  public Integer minutesPerformed() { 
-		  Calendar cal = Calendar.getInstance();
-		  Date d = Date.from(Instant.parse(getHoursPerformed())); sdf.format(d);
-		  cal.setTime(d); 
-		  int hours = cal.get(Calendar.HOUR); 
-		  int minutes = cal.get(Calendar.MINUTE);
 	  
-		  return (hours * 60) + minutes; 
-	}
+	  public Integer minutesPerformed() {
+		  int hours   = Integer.parseInt(getHoursPerformed().substring(0, 2));
+		  int minutes = Integer.parseInt(getHoursPerformed().substring(3));
+		  
+		  return (hours * 60) + minutes;
+	  }
 	 	
 	public double calculationHours() {
 		double valueMinute = getEmployeeSalary() / 13200;

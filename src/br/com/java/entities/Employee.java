@@ -103,11 +103,11 @@ public class Employee {
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
 		
-		sb.append("Date      : " + sdf.format(getDate()));
-		sb.append("\nBadge     : " + getIdBadge());
-		sb.append("\nName      : " + getName());
-		sb.append("\nCPF       : " + getCpf());
-		sb.append("\nDepartment: " + getDepartment());
+		sb.append("Date           : " + sdf.format(getDate()));
+		sb.append("\nBadge          : " + getIdBadge());
+		sb.append("\nName           : " + getName());
+		sb.append("\nCPF            : " + getCpf());
+		sb.append("\nDepartment     : " + getDepartment());
 			
 		sb.append(extraHours);
 		

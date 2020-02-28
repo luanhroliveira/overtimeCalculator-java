@@ -1,12 +1,7 @@
 package br.com.java.entities;
 
-import java.text.SimpleDateFormat;
-
 public class PersonalAssistence extends ExtraHours{
 
-	private static SimpleDateFormat sdf = new SimpleDateFormat("HH:mm");
-
-	
 	private Integer numberTrips;
 	
 	public PersonalAssistence() {
@@ -29,11 +24,12 @@ public class PersonalAssistence extends ExtraHours{
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
 		
-		sb.append("\nHours performed: "   + sdf.format(getHoursPerformed()));
+		sb.append("\nHours performed: "   + getHoursPerformed());
 		sb.append("\nBase salary    : R$" + String.format("%.2f", getEmployeeSalary()));
 		sb.append("\nBase DSR       : "   + getDsrPercentage() + "%");
 		sb.append("\nNumber of trips: "   + getNumberTrips());
-		sb.append("\nValue final    : R$" + calculationHours() + (getNumberTrips() * 10));
+		sb.append("\nValue final    : R$" + String.format("%.2f", calculationHours() + (getNumberTrips() * 10)));
+		sb.append("\n");
 		
 		return sb.toString();
 	}

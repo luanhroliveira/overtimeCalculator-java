@@ -39,8 +39,6 @@ public class Program {
 			System.out.print("Salary: ");
 			double salary = sc.nextDouble();
 
-	//		Employee employeeData = new Employee(name, idBadge, cpf, salary);
-
 			System.out.println();
 			System.out.println("Enter department data: ");
 			System.out.print("Department: ");
@@ -73,7 +71,7 @@ public class Program {
 			employeeList.add(employee);
 			System.out.println();
 		}
-		System.out.println("-----------------------------------------------------------------------------------");
+		System.out.println("------------------------------------------------------------------");
 		System.out.println("SUMMARY:");
 		
 		for(Employee emp : employeeList) {
