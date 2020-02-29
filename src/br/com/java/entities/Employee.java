@@ -2,6 +2,7 @@ package br.com.java.entities;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 
 import br.com.java.enums.Department;
 
@@ -21,19 +22,6 @@ public class Employee {
 	public Employee() {
 	}
 
-	public Employee(String name, Integer idBadge, String cpf, Double salary) {
-		this.name 		= name;
-		this.idBadge 	= idBadge;
-		this.cpf 		= cpf;
-		this.salary 	= salary;
-	}
-	
-	public Employee(Employee employee, Date date, Department department, ExtraHours extraHours) {
-		this.date 		= date;
-		this.department = department;
-		this.extraHours = extraHours;
-	}
-	
 	public Employee(Date date, String name, Integer idBadge, String cpf, Double salary, Department department, ExtraHours extraHours) {
 		this.date 		= date;
 		this.name 		= name;
@@ -98,6 +86,15 @@ public class Employee {
 
 	public void setDate(Date date) {
 		this.date = date;
+	}
+	
+	public void workersList(List<Employee> employeeList){	
+		System.out.println("------------------------------------------------------------------");
+		System.out.println("SUMMARY:");
+		
+		for(Employee emp : employeeList) {
+			System.out.println(emp);
+		}
 	}
 	
 	public String toString() {
